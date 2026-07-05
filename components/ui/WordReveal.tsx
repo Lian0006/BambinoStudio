@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 interface WordRevealProps {
   text: string;
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: React.ElementType;
   className?: string;
   style?: CSSProperties;
   delay?: number;
@@ -17,7 +17,6 @@ export default function WordReveal({ text, tag: Tag = 'p', className, style, del
   const words = text.split(' ');
 
   return (
-    // @ts-expect-error dynamic tag
     <Tag ref={ref} className={className} style={{ ...style, display: 'flex', flexWrap: 'wrap', gap: '0 0.28em' }}>
       {words.map((word, i) => (
         <span key={i} style={{ overflow: 'hidden', display: 'inline-block' }}>

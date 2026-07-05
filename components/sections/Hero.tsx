@@ -12,7 +12,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenModal, ready, calendlyUrl }: HeroProps) {
   const watermarkRef = useRef<HTMLDivElement>(null);
-  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLButtonElement>(null);
 
   // Subtle parallax on watermark
   useEffect(() => {
